@@ -6,5 +6,5 @@ var searchData=
   ['address_3',['address',['../class_address.html',1,'Address'],['../class_address.html#a0a59487338819aea39675c8a5e9754b2',1,'Address::Address()']]],
   ['address_2ecpp_4',['Address.cpp',['../_address_8cpp.html',1,'']]],
   ['address_2eh_5',['Address.h',['../_address_8h.html',1,'']]],
-  ['asserttrue_6',['asserttrue',['../formatterfile_8cpp.html#ae67491ba9e5f515797c8e8501e4b0d94',1,'assertTrue(bool condition, std::string failedMessage):&#160;formatterfile.cpp'],['../formatterfile_8h.html#ae67491ba9e5f515797c8e8501e4b0d94',1,'assertTrue(bool condition, std::string failedMessage):&#160;formatterfile.cpp']]]
+  ['asserttrue_6',['asserttrue',['../helper_functions_8cpp.html#ae67491ba9e5f515797c8e8501e4b0d94',1,'assertTrue(bool condition, std::string failedMessage):&#160;helperFunctions.cpp'],['../helper_functions_8h.html#ae67491ba9e5f515797c8e8501e4b0d94',1,'assertTrue(bool condition, std::string failedMessage):&#160;helperFunctions.cpp']]]
 ];

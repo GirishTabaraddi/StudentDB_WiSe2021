@@ -17,6 +17,8 @@
 #include "Enrollment.h"
 #include "Address.h"
 
+#include <Poco/Exception.h>
+
 /*!
  * @class Student
  * @brief Represents a student with associated
@@ -163,13 +165,6 @@ public:
 	void setAddress(const std::shared_ptr<Address> address);
 
 	/*!
-	 * @brief Method to print the student details.
-	 *
-	 * @return std::string representing the formatted student information.
-	 */
-	std::string printStudent() const;
-
-	/*!
 	 * @brief Add enrollment for the student.
 	 *
 	 * Queries the user for a matrikel number, a course id, and a semester,
@@ -242,6 +237,18 @@ public:
 	 * @return String representation of the date in the format "%d.%m.%Y".
 	 */
 	std::string datetoString(const Poco::Data::Date date) const;
+
+	/*!
+	 * @brief Create a Student object from JSON data.
+	 *
+	 * This method takes a Poco::JSON::Object::Ptr representing JSON data
+	 * and constructs a Student object from it.
+	 *
+	 * @param data A pointer to the Poco::JSON::Object containing JSON data.
+	 * @return The constructed Student object.
+	 */
+	static Student fromJson(Poco::JSON::Object::Ptr data);
+
 };
 
 #endif /* STUDENT_H_ */

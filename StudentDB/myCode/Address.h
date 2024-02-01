@@ -13,7 +13,7 @@
 #include <string>
 #include <iostream>
 
-#include "formatterfile.h"
+#include "helperFunctions.h"
 
 /*!
  * @class Address
@@ -91,13 +91,6 @@ public:
 	const std::string& getadditionalInfo() const;
 
 	/*!
-	 * @brief Method to print the address.
-	 *
-	 * @return std::string representing the formatted address.
-	 */
-	std::string printAddress() const;
-
-	/*!
 	 * \brief Writes the Address information to the specified output stream.
 	 *
 	 * This function writes the street, postal code, city name,
@@ -131,6 +124,19 @@ public:
 	 * @return Poco::JSON::Object::Ptr representing the object in JSON.
 	 */
 	Poco::JSON::Object::Ptr toJson() const;
+
+	/**
+	 * @brief Create an Address object from JSON data.
+	 *
+	 * This static method takes a Poco::JSON::Object::Ptr representing JSON data
+	 * and constructs an Address object from it. The resulting Address object
+	 * is wrapped in a std::shared_ptr.
+	 *
+	 * @param data A pointer to the Poco::JSON::Object containing JSON data.
+	 * @return A std::shared_ptr<Address> containing the constructed Address object.
+	 */
+	static std::shared_ptr<Address> fromJson(Poco::JSON::Object::Ptr data);
+
 };
 
 #endif /* ADDRESS_H_ */

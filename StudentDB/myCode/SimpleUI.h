@@ -26,34 +26,16 @@ private:
 	 */
 	StudentDb& m_db;
 
-public:
-	/*!
-	 * @brief Parameterized constructor for SimpleUI.
-	 *
-	 * Initializes the SimpleUI class with a reference
-	 * to a StudentDb object.
-	 *
-	 * @param db A reference to the StudentDb class.
-	 */
-	SimpleUI(StudentDb& db);
-
-	/*!
-	 * @brief Default destructor for the SimpleUI class.
-	 */
-	virtual ~SimpleUI();
-
-	/*!
-	 * @brief Lists all the properties available in the database,
-	 * requests input from the user,
-	 *        and executes the respective operation.
-	 */
-	void run() const;
-
 private:
 	/*!
 	 * @brief Get user inputs for creating a new course.
 	 */
 	void getUserInputsforNewCourse() const;
+
+	/*!
+	 * @brief List's all courses.
+	 */
+	void listCourses() const;
 
 	/*!
 	 * @brief Get user inputs for adding a new student.
@@ -122,6 +104,29 @@ private:
 	 */
 	void performEnrollmentUpdate(const std::string& courseKey,
 			const Student& updateStudent) const;
+
+public:
+	/*!
+	 * @brief Parameterized constructor for SimpleUI.
+	 *
+	 * Initializes the SimpleUI class with a reference
+	 * to a StudentDb object.
+	 *
+	 * @param db A reference to the StudentDb class.
+	 */
+	SimpleUI(StudentDb& db);
+
+	/*!
+	 * @brief Default destructor for the SimpleUI class.
+	 */
+	virtual ~SimpleUI();
+
+	/*!
+	 * @brief Lists all the properties available in the database,
+	 * requests input from the user,
+	 *        and executes the respective operation.
+	 */
+	void run() const;
 };
 
 

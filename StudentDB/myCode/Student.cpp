@@ -15,9 +15,9 @@ unsigned int Student::m_nextMatrikelNumber = 100000;
 
 Student::Student(std::string firstName, std::string lastName,
 		Poco::Data::Date dateOfBirth, std::shared_ptr<Address> address) :
-						m_matrikelNumber(Student::m_nextMatrikelNumber++),
-						m_firstName(firstName), m_lastName(lastName),
-						m_dateOfBirth(dateOfBirth), m_address(address)
+		m_matrikelNumber(Student::m_nextMatrikelNumber++),
+		m_firstName(firstName), m_lastName(lastName),
+		m_dateOfBirth(dateOfBirth), m_address(address)
 {
 }
 
@@ -78,18 +78,6 @@ void Student::setDateOfBirth(const Poco::Data::Date &dateOfBirth)
 void Student::setAddress(const std::shared_ptr<Address> address)
 {
 	this->m_address = address;
-}
-
-std::string Student::printStudent() const
-{
-	string out = (to_string(this->m_matrikelNumber)
-			+ ";" + this->m_firstName
-			+ ";" + this->m_lastName
-			+ ";" + datetoString(this->m_dateOfBirth) + ";");
-
-	out += getAddress()->printAddress();
-
-	return out;
 }
 
 void Student::addEnrollment(const std::string& semester, const Course *newCourseId)
@@ -173,7 +161,6 @@ Student Student::read(std::istream &in)
 	Student addStudent(firstName, lastName, dateOfBirth, address);
 
 	return addStudent;
-
 }
 
 Poco::JSON::Object::Ptr Student::toJson() const
@@ -211,4 +198,25 @@ std::string Student::datetoString(const Poco::Data::Date date) const
 			<< month << "." << year;
 
 	return oss.str();
+}
+
+Student Student::fromJson(Poco::JSON::Object::Ptr data)
+{
+	Poco::DynamicStruct jsonDataStruct = *data;
+
+	string firstName = jsonDataStruct["firstName"].toString();
+	string lastName = jsonDataStruct["lastName"].toString();
+	string dateOfBirthStr = jsonDataStruct["dateOfBirth"].toString();
+
+	Poco::Data::Date dateOfBirth = stringToPocoDateFormatter(dateOfBirthStr);
+
+	unsigned int matrikelNumber = jsonDataStruct["matrikelNumber"];
+
+	Student::m_nextMatrikelNumber = matrikelNumber;
+
+	const Poco::JSON::Object::Ptr addressData = data->getObject("address");
+
+	std::shared_ptr<Address> address = Address::fromJson(addressData);
+
+	return Student(firstName, lastName, dateOfBirth, address);
 }

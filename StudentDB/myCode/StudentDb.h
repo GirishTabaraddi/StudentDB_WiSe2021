@@ -128,20 +128,19 @@ public:
         RC_Invalid_Semester_Added
 	};
 
-
 	/*!
 	 * @brief Default constructor for StudentDb class.
 	 */
 	StudentDb();
 
-    /**
-     * @brief Virtual destructor for the StudentDb class.
-     *
-     * This virtual destructor is responsible for cleaning up any resources held by the
-     * StudentDb object. It is automatically called when a derived class instance goes out
-     * of scope or when explicitly deleted using the `delete` keyword.
-     */
-    virtual ~StudentDb();
+	/**
+	 * @brief Virtual destructor for the StudentDb class.
+	 *
+	 * This virtual destructor is responsible for cleaning up any resources held by the
+	 * StudentDb object. It is automatically called when a derived class instance goes out
+	 * of scope or when explicitly deleted using the `delete` keyword.
+	 */
+	virtual ~StudentDb();
 
 	/*!
 	 * @brief Getter method to fetch the students.
@@ -171,11 +170,6 @@ public:
 			std::string& courseType,std::string& startTime,
 			std::string& endTime,std::string& startDate,
 			std::string& endDate,std::string& dayOfWeek);
-
-	/*!
-	 * @brief List's all courses.
-	 */
-	std::string listCourses() const;
 
 	/*!
 	 * @brief Add a new student to the database.
@@ -304,6 +298,17 @@ public:
 	 * @see DerivedClass::toJson() for an example of implementation.
 	 */
 	virtual Poco::JSON::Object::Ptr toJson() const;
+
+	/**
+	 * @brief Populate the StudentDb from JSON data.
+	 *
+	 * This method populates the StudentDb object with data from the provided
+	 * Poco::JSON::Object::Ptr representing JSON data.
+	 *
+	 * @param data A pointer to the Poco::JSON::Object containing JSON data.
+	 */
+	void fromJson(Poco::JSON::Object::Ptr data);
+
 };
 
 #endif /* STUDENTDB_H_ */

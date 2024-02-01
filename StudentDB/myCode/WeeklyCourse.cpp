@@ -39,17 +39,6 @@ Poco::Data::Time WeeklyCourse::getEndTime() const
 	return this->m_endTime;
 }
 
-std::string WeeklyCourse::printCourse() const
-{
-	string outStr =
-			"W;" + Course::printCourse() +
-			";" + to_string(this->m_daysOfWeek) +
-			";" + timetoString(this->m_startTime) +
-			";" + timetoString(this->m_endTime);
-
-	return outStr;
-}
-
 void WeeklyCourse::write(std::ostream &out) const
 {
 	out << "W;";
@@ -87,7 +76,7 @@ Poco::JSON::Object::Ptr WeeklyCourse::toJson() const
 
 	Poco::JSON::Object::Ptr courseJSON = Course::toJson();
 
-	Poco::Dynamic::Var courseType = Poco::Dynamic::Var("W");
+	Poco::Dynamic::Var courseType("W");
 
 	returnObj->set("courseType", courseType);
 

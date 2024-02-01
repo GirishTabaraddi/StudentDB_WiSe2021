@@ -123,9 +123,6 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Address</b> ()</t
 <tr class="memitem:a2e5f370c3caf5bc8686de435dfe53562" id="r_a2e5f370c3caf5bc8686de435dfe53562"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_address.html#a2e5f370c3caf5bc8686de435dfe53562">getadditionalInfo</a> () const</td></tr>
 <tr class="memdesc:a2e5f370c3caf5bc8686de435dfe53562"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter method for additional information about the address.  <br /></td></tr>
 <tr class="separator:a2e5f370c3caf5bc8686de435dfe53562"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d3064867fc0951e90e2d99b947c8b31" id="r_a7d3064867fc0951e90e2d99b947c8b31"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_address.html#a7d3064867fc0951e90e2d99b947c8b31">printAddress</a> () const</td></tr>
-<tr class="memdesc:a7d3064867fc0951e90e2d99b947c8b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to print the address.  <br /></td></tr>
-<tr class="separator:a7d3064867fc0951e90e2d99b947c8b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac35b0420dbb9cba5ace41b0c5ce015d1" id="r_ac35b0420dbb9cba5ace41b0c5ce015d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_address.html#ac35b0420dbb9cba5ace41b0c5ce015d1">write</a> (std::ostream &amp;out) const</td></tr>
 <tr class="memdesc:ac35b0420dbb9cba5ace41b0c5ce015d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the <a class="el" href="class_address.html" title="Represents an address with specific details.">Address</a> information to the specified output stream.  <br /></td></tr>
 <tr class="separator:ac35b0420dbb9cba5ace41b0c5ce015d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,6 +135,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab9043de5339daa70f7b01fe208523869" id="r_ab9043de5339daa70f7b01fe208523869"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="class_address.html">Address</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_address.html#ab9043de5339daa70f7b01fe208523869">read</a> (std::istream &amp;in)</td></tr>
 <tr class="memdesc:ab9043de5339daa70f7b01fe208523869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads an <a class="el" href="class_address.html" title="Represents an address with specific details.">Address</a> from the input stream.  <br /></td></tr>
 <tr class="separator:ab9043de5339daa70f7b01fe208523869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52c1f53a28f44b9593949dedb846477a" id="r_a52c1f53a28f44b9593949dedb846477a"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="class_address.html">Address</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_address.html#a52c1f53a28f44b9593949dedb846477a">fromJson</a> (Poco::JSON::Object::Ptr data)</td></tr>
+<tr class="memdesc:a52c1f53a28f44b9593949dedb846477a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an <a class="el" href="class_address.html" title="Represents an address with specific details.">Address</a> object from JSON data.  <br /></td></tr>
+<tr class="separator:a52c1f53a28f44b9593949dedb846477a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents an address with specific details. </p>
@@ -195,6 +195,42 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a52c1f53a28f44b9593949dedb846477a" name="a52c1f53a28f44b9593949dedb846477a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52c1f53a28f44b9593949dedb846477a">&#9670;&#160;</a></span>fromJson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="class_address.html">Address</a> &gt; Address::fromJson </td>
+          <td>(</td>
+          <td class="paramtype">Poco::JSON::Object::Ptr&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create an <a class="el" href="class_address.html" title="Represents an address with specific details.">Address</a> object from JSON data. </p>
+<p>This static method takes a Poco::JSON::Object::Ptr representing JSON data and constructs an <a class="el" href="class_address.html" title="Represents an address with specific details.">Address</a> object from it. The resulting <a class="el" href="class_address.html" title="Represents an address with specific details.">Address</a> object is wrapped in a std::shared_ptr.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>A pointer to the Poco::JSON::Object containing JSON data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A std::shared_ptr&lt;Address&gt; containing the constructed <a class="el" href="class_address.html" title="Represents an address with specific details.">Address</a> object. </dd></dl>
+
+</div>
+</div>
 <a id="a2e5f370c3caf5bc8686de435dfe53562" name="a2e5f370c3caf5bc8686de435dfe53562"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e5f370c3caf5bc8686de435dfe53562">&#9670;&#160;</a></span>getadditionalInfo()</h2>
 
@@ -272,26 +308,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Getter method for the street address. </p>
 <dl class="section return"><dt>Returns</dt><dd>const std::string&amp; representing the street address. </dd></dl>
-
-</div>
-</div>
-<a id="a7d3064867fc0951e90e2d99b947c8b31" name="a7d3064867fc0951e90e2d99b947c8b31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d3064867fc0951e90e2d99b947c8b31">&#9670;&#160;</a></span>printAddress()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Address::printAddress </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Method to print the address. </p>
-<dl class="section return"><dt>Returns</dt><dd>std::string representing the formatted address. </dd></dl>
 
 </div>
 </div>

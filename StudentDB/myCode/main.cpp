@@ -7,7 +7,7 @@ using namespace std;
 //! Add your project's header files here
 #include "SimpleUI.h"
 
-#include "formatterfile.h"
+#include "helperFunctions.h"
 
 //! Main program
 int main ()

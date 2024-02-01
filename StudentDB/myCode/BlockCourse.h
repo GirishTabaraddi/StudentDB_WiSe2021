@@ -90,13 +90,6 @@ public:
 	 */
 	Poco::Data::Time getEndTime() const;
 
-	/*!
-	 * @brief Print method that outputs the data of the block course.
-	 *
-	 * @return String representation of the course data.
-	 */
-	std::string printCourse() const override;
-
 	/**
 	 * @brief Write the object's data to the provided output stream.
 	 *

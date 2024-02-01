@@ -141,9 +141,6 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Student</b> ()</t
 <tr class="memitem:ae906355a724e401338f12e7f6a1dc901" id="r_ae906355a724e401338f12e7f6a1dc901"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student.html#ae906355a724e401338f12e7f6a1dc901">setAddress</a> (const std::shared_ptr&lt; <a class="el" href="class_address.html">Address</a> &gt; address)</td></tr>
 <tr class="memdesc:ae906355a724e401338f12e7f6a1dc901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the address of the student.  <br /></td></tr>
 <tr class="separator:ae906355a724e401338f12e7f6a1dc901"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0ff21ff068dd1bf6f3ebd762f97853c" id="r_ab0ff21ff068dd1bf6f3ebd762f97853c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student.html#ab0ff21ff068dd1bf6f3ebd762f97853c">printStudent</a> () const</td></tr>
-<tr class="memdesc:ab0ff21ff068dd1bf6f3ebd762f97853c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to print the student details.  <br /></td></tr>
-<tr class="separator:ab0ff21ff068dd1bf6f3ebd762f97853c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7152dd79b045a0a680ce6a51751605c" id="r_ab7152dd79b045a0a680ce6a51751605c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student.html#ab7152dd79b045a0a680ce6a51751605c">addEnrollment</a> (const std::string &amp;semester, const <a class="el" href="class_course.html">Course</a> *courseId)</td></tr>
 <tr class="memdesc:ab7152dd79b045a0a680ce6a51751605c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add enrollment for the student.  <br /></td></tr>
 <tr class="separator:ab7152dd79b045a0a680ce6a51751605c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,6 +168,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aaa58f7b039d778b055d34593645326df" id="r_aaa58f7b039d778b055d34593645326df"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_student.html">Student</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student.html#aaa58f7b039d778b055d34593645326df">read</a> (std::istream &amp;in)</td></tr>
 <tr class="memdesc:aaa58f7b039d778b055d34593645326df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a <a class="el" href="class_student.html" title="Represents a student with associated details and enrollment information.">Student</a> object from the specified input stream.  <br /></td></tr>
 <tr class="separator:aaa58f7b039d778b055d34593645326df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a926a7f5260050e632e382c3a58b82a5f" id="r_a926a7f5260050e632e382c3a58b82a5f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_student.html">Student</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student.html#a926a7f5260050e632e382c3a58b82a5f">fromJson</a> (Poco::JSON::Object::Ptr data)</td></tr>
+<tr class="memdesc:a926a7f5260050e632e382c3a58b82a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="class_student.html" title="Represents a student with associated details and enrollment information.">Student</a> object from JSON data.  <br /></td></tr>
+<tr class="separator:a926a7f5260050e632e382c3a58b82a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a student with associated details and enrollment information. </p>
@@ -320,6 +320,42 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a926a7f5260050e632e382c3a58b82a5f" name="a926a7f5260050e632e382c3a58b82a5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a926a7f5260050e632e382c3a58b82a5f">&#9670;&#160;</a></span>fromJson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_student.html">Student</a> Student::fromJson </td>
+          <td>(</td>
+          <td class="paramtype">Poco::JSON::Object::Ptr&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a <a class="el" href="class_student.html" title="Represents a student with associated details and enrollment information.">Student</a> object from JSON data. </p>
+<p>This method takes a Poco::JSON::Object::Ptr representing JSON data and constructs a <a class="el" href="class_student.html" title="Represents a student with associated details and enrollment information.">Student</a> object from it.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>A pointer to the Poco::JSON::Object containing JSON data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The constructed <a class="el" href="class_student.html" title="Represents a student with associated details and enrollment information.">Student</a> object. </dd></dl>
+
+</div>
+</div>
 <a id="a23cfed27fc219f493ddd49516a9ef9fd" name="a23cfed27fc219f493ddd49516a9ef9fd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a23cfed27fc219f493ddd49516a9ef9fd">&#9670;&#160;</a></span>getAddress()</h2>
 
@@ -437,26 +473,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Getter method that returns the Matrikel number of a student. </p>
 <dl class="section return"><dt>Returns</dt><dd>The Matrikel number as an unsigned integer. </dd></dl>
-
-</div>
-</div>
-<a id="ab0ff21ff068dd1bf6f3ebd762f97853c" name="ab0ff21ff068dd1bf6f3ebd762f97853c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0ff21ff068dd1bf6f3ebd762f97853c">&#9670;&#160;</a></span>printStudent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Student::printStudent </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Method to print the student details. </p>
-<dl class="section return"><dt>Returns</dt><dd>std::string representing the formatted student information. </dd></dl>
 
 </div>
 </div>

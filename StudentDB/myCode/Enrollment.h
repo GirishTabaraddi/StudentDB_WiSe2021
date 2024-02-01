@@ -82,13 +82,6 @@ public:
 	void setgrade(const float& grade);
 
 	/*!
-	 * @brief Method to print the enrollment details.
-	 *
-	 * @return std::string representing the formatted enrollment information.
-	 */
-	std::string printEnrollment() const;
-
-	/*!
 	 * @brief Writes the Enrollment information to the specified output stream.
 	 *
 	 * This function writes the course key, semester, and grade of the Enrollment

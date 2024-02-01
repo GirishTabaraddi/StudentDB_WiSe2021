@@ -11,7 +11,6 @@ var class_student =
     [ "getFirstName", "class_student.html#aabc22298e32cdd47976bd3d3c5033df6", null ],
     [ "getLastName", "class_student.html#a1e555d9d92cbf5ee319b55771c9891b9", null ],
     [ "getMatrikelNumber", "class_student.html#ad9b5383ee40e2b8f3c3225a1a1a28694", null ],
-    [ "printStudent", "class_student.html#ab0ff21ff068dd1bf6f3ebd762f97853c", null ],
     [ "setAddress", "class_student.html#ae906355a724e401338f12e7f6a1dc901", null ],
     [ "setDateOfBirth", "class_student.html#ae5dadd83a4cde4dd7f4e4149a65208cc", null ],
     [ "setFirstName", "class_student.html#ae400656b063fa9e165060099dddfab19", null ],

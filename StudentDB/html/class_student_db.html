@@ -136,10 +136,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac4548d9946d422d9f1bdfe8338a113a4" id="r_ac4548d9946d422d9f1bdfe8338a113a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_student_db.html#a30b659c517fe917b05ae084d72f33662">RC_StudentDb_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_db.html#ac4548d9946d422d9f1bdfe8338a113a4">addNewCourse</a> (std::string &amp;courseKey, std::string &amp;title, std::string &amp;major, std::string &amp;credits, std::string &amp;semester, std::string &amp;courseType, std::string &amp;startTime, std::string &amp;endTime, std::string &amp;startDate, std::string &amp;endDate, std::string &amp;dayOfWeek)</td></tr>
 <tr class="memdesc:ac4548d9946d422d9f1bdfe8338a113a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new course to the database.  <br /></td></tr>
 <tr class="separator:ac4548d9946d422d9f1bdfe8338a113a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb73457c14c359d58c7bf48dc97e1c9c" id="r_acb73457c14c359d58c7bf48dc97e1c9c"><td class="memItemLeft" align="right" valign="top"><a id="acb73457c14c359d58c7bf48dc97e1c9c" name="acb73457c14c359d58c7bf48dc97e1c9c"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>listCourses</b> () const</td></tr>
-<tr class="memdesc:acb73457c14c359d58c7bf48dc97e1c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">List's all courses. <br /></td></tr>
-<tr class="separator:acb73457c14c359d58c7bf48dc97e1c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c9857b52f911919c7fba97dc2f90c5e" id="r_a3c9857b52f911919c7fba97dc2f90c5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_student_db.html#a30b659c517fe917b05ae084d72f33662">RC_StudentDb_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_db.html#a3c9857b52f911919c7fba97dc2f90c5e">addNewStudent</a> (std::string &amp;firstName, std::string &amp;lastName, std::string &amp;DoBstring, std::string &amp;streetName, std::string &amp;postalCode, std::string &amp;cityName, std::string &amp;additionalInfo)</td></tr>
 <tr class="memdesc:a3c9857b52f911919c7fba97dc2f90c5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new student to the database.  <br /></td></tr>
 <tr class="separator:a3c9857b52f911919c7fba97dc2f90c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -176,6 +172,9 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>listCourses</b
 <tr class="memitem:a73ff9892df172a0228a68f4aecbfbf88" id="r_a73ff9892df172a0228a68f4aecbfbf88"><td class="memItemLeft" align="right" valign="top">virtual Poco::JSON::Object::Ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_db.html#a73ff9892df172a0228a68f4aecbfbf88">toJson</a> () const</td></tr>
 <tr class="memdesc:a73ff9892df172a0228a68f4aecbfbf88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the object to a Poco::JSON::Object::Ptr.  <br /></td></tr>
 <tr class="separator:a73ff9892df172a0228a68f4aecbfbf88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf13b6791d81ebfb6c1bd18d52ae2f28" id="r_abf13b6791d81ebfb6c1bd18d52ae2f28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_db.html#abf13b6791d81ebfb6c1bd18d52ae2f28">fromJson</a> (Poco::JSON::Object::Ptr data)</td></tr>
+<tr class="memdesc:abf13b6791d81ebfb6c1bd18d52ae2f28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the <a class="el" href="class_student_db.html" title="Represents a database of students and courses with various operations.">StudentDb</a> from JSON data.  <br /></td></tr>
+<tr class="separator:abf13b6791d81ebfb6c1bd18d52ae2f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a database of students and courses with various operations. </p>
@@ -467,6 +466,33 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>listCourses</b
   <table class="params">
     <tr><td class="paramname">courseKey</td><td>Key of the course to be deleted. </td></tr>
     <tr><td class="paramname">matrikelNumber</td><td>Matrikel number of the student. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abf13b6791d81ebfb6c1bd18d52ae2f28" name="abf13b6791d81ebfb6c1bd18d52ae2f28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf13b6791d81ebfb6c1bd18d52ae2f28">&#9670;&#160;</a></span>fromJson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StudentDb::fromJson </td>
+          <td>(</td>
+          <td class="paramtype">Poco::JSON::Object::Ptr&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Populate the <a class="el" href="class_student_db.html" title="Represents a database of students and courses with various operations.">StudentDb</a> from JSON data. </p>
+<p>This method populates the <a class="el" href="class_student_db.html" title="Represents a database of students and courses with various operations.">StudentDb</a> object with data from the provided Poco::JSON::Object::Ptr representing JSON data.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>A pointer to the Poco::JSON::Object containing JSON data. </td></tr>
   </table>
   </dd>
 </dl>

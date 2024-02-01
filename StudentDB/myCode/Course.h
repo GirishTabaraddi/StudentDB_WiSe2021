@@ -13,7 +13,7 @@
 #include <map>
 #include <iomanip>
 
-#include "formatterfile.h"
+#include "helperFunctions.h"
 
 class BlockCourse;  ///< Forward declaration
 class WeeklyCourse; ///< Forward declaration
@@ -153,7 +153,7 @@ public:
 	 */
 	const float getcreditPoints() const;
 
-	/**
+	/*!
 	* Returns the semester in which the course takes or took place as an
 	* abbreviated string in the format "WiSe2021", "SoSe2022", "WiSe2022" etc.
 	*
@@ -162,16 +162,6 @@ public:
 	std::string getSemester() const;
 
 	/*!
-	 * @brief Generates a string representation of the Course.
-	 *
-	 * This method creates and returns a string representation of the Course,
-	 * including its course key, title, major, and credit points.
-	 *
-	 * @return A string containing information about the Course.
-	 */
-	virtual std::string printCourse() const;
-
-	/**
 	 * @brief Write the object's data to the provided output stream.
 	 *
 	 * This method is pure virtual and intended to be overridden by derived classes

@@ -1,5 +1,5 @@
 /*!
- * @file formatterfile.h
+ * @file helperFunctions.h
  *
  * \n Created on: 11-Jan-2024
  * @author Girish Tabaraddi
@@ -7,8 +7,8 @@
  * Built on: \showdate "%A %d-%m-%Y %H:%M:%S"
  */
 
-#ifndef FORMATTERFILE_H_
-#define FORMATTERFILE_H_
+#ifndef HELPERFUNCTIONS_H_
+#define HELPERFUNCTIONS_H_
 
 #include <iostream>
 #include <string>
@@ -57,6 +57,14 @@ std::string pocoDateToStringFormatter(const Poco::Data::Date &date);
  * @return Poco::Data::Date representing the parsed date.
  */
 Poco::Data::Date stringToPocoDateFormatter(const std::string& stringDate);
+
+/*!
+ * @brief Converts Poco::Data::Time to a formatted string.
+ *
+ * @param time Poco::Data::Time object to be converted.
+ * @return std::string representing the formatted time.
+ */
+std::string pocoTimeToStringFormatter(const Poco::Data::Time &time);
 
 /*!
  * @brief Converts a string to Poco::Data::Time.
@@ -152,4 +160,4 @@ void assertTrue(bool condition, std::string failedMessage);
 // */
 //bool isPrintableInput(std::string& input);
 
-#endif /* FORMATTERFILE_H_ */
+#endif /* HELPERFUNCTIONS_H_ */

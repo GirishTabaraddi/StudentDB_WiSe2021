@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['listcourses_0',['listCourses',['../class_student_db.html#acb73457c14c359d58c7bf48dc97e1c9c',1,'StudentDb']]]
+  ['helperfunctions_2ecpp_0',['helperFunctions.cpp',['../helper_functions_8cpp.html',1,'']]],
+  ['helperfunctions_2eh_1',['helperFunctions.h',['../helper_functions_8h.html',1,'']]]
 ];

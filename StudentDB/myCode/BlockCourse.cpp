@@ -44,18 +44,6 @@ Poco::Data::Time BlockCourse::getEndTime() const
 	return this->m_endTime;
 }
 
-std::string BlockCourse::printCourse() const
-{
-	string outStr =
-			"B;" + Course::printCourse() +
-			";" + datetoString(this->m_startDate) +
-			";" + datetoString(this->m_endDate) +
-			";" + timetoString(this->m_startTime) +
-			";" + timetoString(this->m_endTime);
-
-	return outStr;
-}
-
 void BlockCourse::write(std::ostream &out) const
 {
 	out << "B;";

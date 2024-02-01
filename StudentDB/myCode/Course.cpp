@@ -70,19 +70,6 @@ Course::~Course()
 {
 }
 
-std::string Course::printCourse() const
-{
-	ostringstream oss;
-
-	oss << fixed << setprecision(1) << this->m_creditPoints;
-
-	string creditpoints = oss.str();
-
-	return (to_string(this->m_courseKey) + ";" + this->m_title + ";"
-			+ this->m_majorById.at(this->m_major) + ";" + creditpoints
-			+ ";" + this->getSemester());
-}
-
 void Course::write(std::ostream &out) const
 {
 	auto itr = this->m_majorById.find(this->m_major);

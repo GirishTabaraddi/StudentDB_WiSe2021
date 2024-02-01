@@ -4,5 +4,5 @@ var searchData=
   ['addnewcourse_1',['addNewCourse',['../class_student_db.html#ac4548d9946d422d9f1bdfe8338a113a4',1,'StudentDb']]],
   ['addnewstudent_2',['addNewStudent',['../class_student_db.html#a3c9857b52f911919c7fba97dc2f90c5e',1,'StudentDb']]],
   ['address_3',['Address',['../class_address.html#a0a59487338819aea39675c8a5e9754b2',1,'Address']]],
-  ['asserttrue_4',['asserttrue',['../formatterfile_8cpp.html#ae67491ba9e5f515797c8e8501e4b0d94',1,'assertTrue(bool condition, std::string failedMessage):&#160;formatterfile.cpp'],['../formatterfile_8h.html#ae67491ba9e5f515797c8e8501e4b0d94',1,'assertTrue(bool condition, std::string failedMessage):&#160;formatterfile.cpp']]]
+  ['asserttrue_4',['asserttrue',['../helper_functions_8cpp.html#ae67491ba9e5f515797c8e8501e4b0d94',1,'assertTrue(bool condition, std::string failedMessage):&#160;helperFunctions.cpp'],['../helper_functions_8h.html#ae67491ba9e5f515797c8e8501e4b0d94',1,'assertTrue(bool condition, std::string failedMessage):&#160;helperFunctions.cpp']]]
 ];

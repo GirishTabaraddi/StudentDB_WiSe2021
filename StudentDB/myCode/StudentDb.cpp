@@ -75,18 +75,6 @@ StudentDb::addNewCourse(std::string &courseKey, std::string &title,
 	return RC_StudentDb_t::RC_Success;
 }
 
-std::string StudentDb::listCourses() const
-{
-	ostringstream output;
-
-	for(const pair<const int, unique_ptr<const Course>>& course : this->m_courses)
-	{
-		output << course.second->printCourse() << endl;
-	}
-
-	return output.str();
-}
-
 StudentDb::RC_StudentDb_t
 StudentDb::addNewStudent(std::string &firstName, std::string &lastName,
 		std::string &DoBstring, std::string &streetName,
@@ -585,4 +573,18 @@ Poco::JSON::Object::Ptr StudentDb::toJson() const
 	returnObj->set("students", studentsArray);
 
 	return returnObj;
+}
+
+void StudentDb::fromJson(Poco::JSON::Object::Ptr data)
+{
+	Poco::JSON::Array::Ptr studentArray = data->getArray("students");
+
+	for(const Poco::Dynamic::Var& studentData: *studentArray)
+	{
+		Poco::JSON::Object::Ptr dataPtr = studentData.extract<Poco::JSON::Object::Ptr>();
+
+		Student addStudent = Student::fromJson(dataPtr);
+
+		this->m_students.insert(make_pair(addStudent.getMatrikelNumber(), addStudent));
+	}
 }

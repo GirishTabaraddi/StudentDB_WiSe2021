@@ -1,11 +1,3 @@
 0
-9
-100000;requerino;rodrigues;08.11.1990;2490 rua dezesseis de maio;2635;santa cruz do sul;distrito federal
-100001;simon;kowalski;29.04.1993;2593 peel st;37405;elgin;nunavut
-100002;xavier;mitchell;06.12.2016;4489 regent ave;9341;chatham;british columbia
-100003;latife;adal;23.11.1984;2329 tunalı hilmi cd;16835;batman;manisa
-100004;victoria;riviere;08.07.1941;9220 rue de gerland;28576;créteil;hauts-de-seine
-100005;chris;peters;04.05.1963;6564 cork street;16143;tullow;louth
-100006;charline;chevalier;04.02.1983;1012 rue pasteur;2687;aulnay-sous-bois;charente
-100007;elia;thomas;22.12.1997;3540 rue dubois;4648;lille;somme
-100008;fabiënne;van nijnatten;18.11.2021;8069 amsterdamsestraatweg;48366;bergen op zoom;flevoland
+0
+0

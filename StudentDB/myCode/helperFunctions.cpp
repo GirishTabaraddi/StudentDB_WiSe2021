@@ -1,5 +1,5 @@
 /*!
- * @file formatterfile.cpp
+ * @file helperFunctions.cpp
  *
  * \n Created on: 11-Jan-2024
  * @author Girish Tabaraddi
@@ -7,7 +7,7 @@
  * Built on: \showdate "%A %d-%m-%Y %H:%M:%S"
  */
 
-#include "formatterfile.h"
+#include "helperFunctions.h"
 
 using namespace std;
 
@@ -47,6 +47,15 @@ Poco::Data::Date stringToPocoDateFormatter(const std::string& stringDate)
 	}
 
 	return Poco::Data::Date(datetime.year(), datetime.month(), datetime.day());
+}
+
+std::string pocoTimeToStringFormatter(const Poco::Data::Time &time)
+{
+	string timeString;
+
+	timeString = Poco::DateTimeFormatter::format(Poco::LocalDateTime(1,1,1,time.hour(), time.minute()), "%H:%M");
+
+	return timeString;
 }
 
 Poco::Data::Time stringToPocoTimeFormatter(const std::string &stringTime)
@@ -117,10 +126,10 @@ Poco::DateTime::DaysOfWeek getDayOfWeekFromString(const std::string& dayString)
 	}
 
 	//! Handle invalid input or return a default value
-			cerr << "Invalid day input: " << dayString
-					<< ". Defaulting to Monday." << endl;
+	cerr << "Invalid day input: " << dayString
+			<< ". Defaulting to Monday." << endl;
 
-			return Poco::DateTime::MONDAY;
+	return Poco::DateTime::MONDAY;
 }
 
 std::string splitAt(std::string &input, char delimiter)

@@ -13,8 +13,8 @@ using namespace std;
 
 Address::Address(std::string street, unsigned short postalCode,
 		std::string cityName, std::string additionalInfo) :
-						m_street(street), m_postalCode(postalCode),
-						m_cityName(cityName), m_additionalInfo(additionalInfo)
+		m_street(street), m_postalCode(postalCode),
+		m_cityName(cityName), m_additionalInfo(additionalInfo)
 {
 }
 
@@ -40,16 +40,6 @@ const std::string& Address::getcityName() const
 const std::string& Address::getadditionalInfo() const
 {
 	return this->m_additionalInfo;
-}
-
-std::string Address::printAddress() const
-{
-	string out = this->m_street
-			+ ";" + to_string(this->m_postalCode)
-			+ ";" + this->m_cityName
-			+ ";" + this->m_additionalInfo;
-
-	return out;
 }
 
 void Address::write(std::ostream &out) const
@@ -83,4 +73,19 @@ Poco::JSON::Object::Ptr Address::toJson() const
 	returnObj->set("additionalInfo", this->m_additionalInfo);
 
 	return returnObj;
+}
+
+std::shared_ptr<Address> Address::fromJson(Poco::JSON::Object::Ptr data)
+{
+	Poco::DynamicStruct jsonDataStruct = *data;
+
+	string street = jsonDataStruct["street"].toString();
+
+	unsigned int postalCode = jsonDataStruct["postalCode"];
+
+	string city = jsonDataStruct["cityName"].toString();
+
+	string additionalInfo = jsonDataStruct["additionalInfo"].toString();
+
+	return make_shared<Address>(street, postalCode, city, additionalInfo);
 }
