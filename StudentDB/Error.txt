@@ -1,0 +1,33 @@
+1. cannot convert 'Course' to 'Course*' in initialization
+	This error is when you try to init the class object through a pointer
+	Course* m_course;
+	so to init this in constructor, we should do through new keyword and not uniform initialization.
+	this->m_course = new Course("");
+
+2. error: ISO C++ forbids in-class initialization of non-const static member
+	The initialization of the static member counter must not be in the header file.
+	
+	Change the line in the header file to
+	
+	static int counter;
+	And add the following line to your employee.cpp:
+	
+	int Employee::counter = 0;
+	Reason is that putting such an initialization in the header file would duplicate 
+	the initialization code in every place where the header is included.
+
+3. m_dateOfBirth(1900,1,1)
+	the Poco::Data::Date has to be initialized as shown above or else it will throw error.
+	
+4. The error message is indicating that the copy constructor of std::pair<const int, 
+	std::unique_ptr<const Course>> is being implicitly deleted because the copy constructor 
+	of std::unique_ptr<const Course> is deleted.
+	By returning a const reference to the map instead of returning it by value, 
+	you avoid invoking the copy constructor of std::unique_ptr, and it's more efficient.
+	
+	const std::map<int, std::unique_ptr<const Course>>& getcourses() const;
+	
+5. ..\myCode\StudentDb.cpp: In member function 'void StudentDb::printDb() const':
+	..\myCode\StudentDb.cpp:48:44: error: invalid initialization of reference of type 'const Student&' from expression of type 'const std::pair<const int, Student>'
+   	48 |         for(const Student& students: this->m_students)
+       |                                            ^~~~~~~~~~

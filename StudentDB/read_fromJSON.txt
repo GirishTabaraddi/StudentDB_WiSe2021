@@ -1,0 +1,67 @@
+{
+  "courses": [
+    {
+      "courseKey": 1234,
+      "courseType": "W",
+      "creditPoints": 5,
+      "dayOfWeek": 1,
+      "endTime": "06:45",
+      "major": "Embedded Systems",
+      "semester": "WiSe2022",
+      "startTime": "05:15",
+      "title": "EOS"
+    },
+    {
+      "courseKey": 1235,
+      "courseType": "B",
+      "creditPoints": 5,
+      "endDate": "20.09.2025",
+      "endTime": "10:15",
+      "major": "Automation",
+      "semester": "SoSe2021",
+      "startDate": "16.09.2024",
+      "startTime": "08:15",
+      "title": "C Programming"
+    }
+  ],
+  "students": [
+    {
+      "address": {
+        "additionalInfo": "",
+        "cityName": "Darmstadt",
+        "postalCode": 64295,
+        "street": "7158 RheinNeckarStrasse"
+      },
+      "dateOfBirth": "31.03.1997",
+      "enrollments": [
+        {
+          "courseKey": 1235,
+          "grade": 2.3,
+          "semester": "SS2023"
+        }
+      ],
+      "firstName": "Drashti",
+      "lastName": "Shah",
+      "matrikelNumber": 100000
+    },
+    {
+      "address": {
+        "additionalInfo": "Apartement 10b",
+        "cityName": "Darmstadt",
+        "postalCode": 64287,
+        "street": "2575 Am Karlshof"
+      },
+      "dateOfBirth": "01.03.1997",
+      "enrollments": [
+        {
+          "courseKey": 1234,
+          "grade": 1,
+          "semester": "SS2024"
+        }
+      ],
+      "firstName": "Girish",
+      "lastName": "Tabaraddi",
+      "matrikelNumber": 100001
+    }
+  ]
+}
